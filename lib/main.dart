@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/Screens/home_screen.dart';
 import 'package:shopping_app/Screens/login_screen.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping_app/utils/routes.dart';
 import 'package:shopping_app/widgets/themes.dart';
 
