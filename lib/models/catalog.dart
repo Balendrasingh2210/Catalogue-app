@@ -1,14 +1,7 @@
+import 'dart:convert';
+
 class CatalogModel {
-  static final items = [
-    Item(
-        id: 1,
-        name: "Sasuke Uchiha",
-        desc: "Sharingan and Rinnegan bearer",
-        price: 999,
-        color: "#33505a",
-        imageUrl:
-            "https://www.clearwallpaper.com/wp-content/uploads/2020/12/sasuke-uchiha-wallpaper-0001.jpg")
-  ];
+  static List<Item> items = [];
 }
 
 class Item {
@@ -26,4 +19,24 @@ class Item {
       required this.color,
       required this.price,
       required this.imageUrl});
+
+  factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+      id: map["id"],
+      name: map["name"],
+      desc: map["desc"],
+      color: map["color"],
+      price: map["price"],
+      imageUrl: map["image"],
+    );
+  }
+
+  toMap() => {
+        "id": id,
+        "name": name,
+        "desc": desc,
+        "color": color,
+        "price": price,
+        "image": imageUrl,
+      };
 }
