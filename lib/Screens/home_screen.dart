@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/models/catalog.dart';
 
 import '../widgets/drawer.dart';
+import '../widgets/items_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(30, (index) => CatalogModel.items[0]);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -15,11 +18,15 @@ class HomePage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Center(
-        child: Container(
-          child: Text(
-            'Welcome to the Catalog App',
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: dummyList.length,
+          itemBuilder: (context, index) {
+            return ItemsWidget(
+              item: dummyList[index],
+            );
+          },
         ),
       ),
       drawer: MyDrawer(),
