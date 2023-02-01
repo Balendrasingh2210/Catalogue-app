@@ -9,10 +9,11 @@
 .history
 .svn/
 migrate_working_dir/
-.web/
-.linux/
-.windows/
-.ios/
+/ios/
+/linux/
+/test/
+/web/
+/windows/
 
 # IntelliJ related
 *.iml
